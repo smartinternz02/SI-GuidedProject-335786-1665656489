@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title 
+  > Amazon kindle analysis</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<style>
+.login{
+top: 40%;
+}
+body {
+  background-image:url("https://beta.techcrunch.com/wp-content/uploads/2017/10/fulltreekidfinal.jpg");
+  background-size:center;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+  
+</style>
+</head>
+
+<body align="center">
+ <div class="login">
+	<h1 style="font-family: Lucida Console, Courier, monospace;font-size: 32px;text-shadow:5px 5px 5px black"> Analysis of Amazon kindle Reviews</h1>
+
+     <!-- Main Input For Receiving Query to our DL -->
+    <form action="{{ url_for('y_predict')}}"method="post">
+
+    	<textarea id="review" placeholder="Enter your review" name="Sentence" rows="7" cols="50"></textarea>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Analyse</button>
+    
+    </form>
+
+   <br>
+   <br>
+   <span style="color:black;font-size:25px;font-weight:bold">{{ prediction_text }}</span>
+
+ </div>
+
+
+</body>
+</html>
